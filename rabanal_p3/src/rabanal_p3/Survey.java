@@ -15,7 +15,7 @@ public class Survey {
 				System.out.println("Please rate the following topic from 1 (least important) to 10 (most important).");
 				System.out.println(topics[i] + ":");
 				int rating = in.nextInt();
-				responses[i][rating]++;
+				responses[i][rating - 1]++;
 			}
 			
 			System.out.println("Do you want to repeat the survey for another person to respond? (Y/N):");
@@ -41,10 +41,12 @@ public class Survey {
 			int totalVotes = 0;
 			for (int j = 0; j < responses[i].length; j++) {
 				System.out.print("\t" + responses[i][j]);
-				totalPoints += responses[i][j] * j;
+				totalPoints += responses[i][j] * (j + 1);
 				totalVotes += responses[i][j];
 			}
+			
 			System.out.println("\tAverage: " + totalPoints / totalVotes);
+			
 			if (totalPoints > highestTotalPoints) {
 				highestTotalPoints = totalPoints;
 				highestTotalPointsIssue = i;
