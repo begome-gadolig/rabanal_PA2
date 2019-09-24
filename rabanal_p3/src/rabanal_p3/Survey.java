@@ -6,7 +6,7 @@ public class Survey {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		String[] topics = {"Pizza", "Sub", "Pasta", "Salad", "Drink"};
+		String[] topics = {"Pizza", "Sub", "Pasta", "Salad", "Burger"};
 		int[][] responses = new int[topics.length][10];
 		
 		boolean hasNextResponse = true;
